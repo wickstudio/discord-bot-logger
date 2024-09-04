@@ -1,0 +1,22 @@
+{
+  "name": "wick-loggerv2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Wick Studio",
+  "license": "MIT",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wickstudio/discord-bot-logger.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "discord.js": "^14.15.3",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}

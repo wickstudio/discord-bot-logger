@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعدادات البوت</title>
+    <link rel="stylesheet" href="/css/settings.css">
+</head>
+<body class="dark-theme">
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/images/logo.png" alt="Logo">
+                <span>Wick Studio</span>
+            </div>
+            <ul>
+                <li><a href="/" class="nav-link">الرئيسية</a></li>
+                <li><a href="/settings" class="nav-link active">الإعدادات</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="animated-header">إعدادات العامة</h2>
+        <form id="settingsForm" action="/settings" method="POST">
+            <div class="settings-grid">
+                <% Object.keys(settings.loggers).forEach(function(logger) { %>
+                <div class="log-card">
+                    <div class="log-header">
+                        <h3><%= settings.loggers[logger].displayName.ar %></h3>
+                        <label class="switch">
+                            <input type="checkbox" name="<%= logger %>[enabled]" value="true" <%= settings.loggers[logger].enabled ? 'checked' : '' %>>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="input-group">
+                        <label for="<%= logger %>ChannelId">الروم</label>
+                        <select id="<%= logger %>ChannelId" name="<%= logger %>[channelId]">
+                            <% channels.forEach(channel => { %>
+                                <option value="<%= channel.id %>" <%= settings.loggers[logger].channelId === channel.id ? 'selected' : '' %>>
+                                    #<%= channel.name %>
+                                </option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="<%= logger %>EmbedColor">اللون</label>
+                        <input type="color" id="<%= logger %>EmbedColor" name="<%= logger %>[embedColor]" value="<%= settings.loggers[logger].embedColor %>">
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+            <button type="submit" class="btn">حفظ الإعدادات</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; Copyright © 2023 - 2024 Wick Studio</p>
+        <ul class="socials">
+            <li><a href="https://www.instagram.com/mik__subhi" target="_blank">Instagram</a></li>
+            <li><a href="https://github.com/wickstudio" target="_blank">Github</a></li>
+            <li><a href="https://discord.gg/wicks" target="_blank">Discord</a></li>
+        </ul>
+    </footer>
+
+    <!-- Notification Element -->
+    <div id="notification" class="notification">
+        تم حفظ الإعدادات بنجاح!
+    </div>
+
+    <script src="/js/themeSwitcher.js"></script>
+    <script>
+        document.getElementById('settingsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+
+            setTimeout(() => {
+                e.target.submit();
+            }, 500);
+        });
+    </script>
+</body>
+</html>
