@@ -12,6 +12,8 @@ module.exports = {
   name: 'messageDelete',
   async execute(message, client) {
     try {
+      if (message.author.id === client.user.id) return;
+
       delete require.cache[require.resolve('../../settings')];
       const settings = require('../../settings');
 
@@ -58,9 +60,7 @@ module.exports = {
 
       const deletedBy = admin 
         ? `Admin: ${admin.tag}\nUsername: \`${admin.username}\`\nUser ID: \`${admin.id}\``
-        : user.id === client.user.id 
-          ? lang.bot_deleted_message 
-          : lang.user_deleted_message;
+        : lang.user_deleted_message;
 
       const deletionTime = new Date().toLocaleString('en-US', { timeZone: 'UTC', dateStyle: 'full', timeStyle: 'short' });
 
