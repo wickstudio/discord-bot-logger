@@ -12,6 +12,8 @@ module.exports = {
   name: 'messageUpdate',
   async execute(oldMessage, newMessage, client) {
     try {
+      if (newMessage.author.id === client.user.id) return;
+
       delete require.cache[require.resolve('../../settings')];
       const settings = require('../../settings');
 
@@ -54,9 +56,7 @@ module.exports = {
 
       const editedBy = editor 
         ? `${lang.edited_by}: <@${editor.id}> (\`${editor.tag}\`)`
-        : user.id === client.user.id 
-          ? lang.bot_edited_message
-          : `${lang.edited_by}: <@${user.id}> (\`${user.tag}\`)`;
+        : `${lang.edited_by}: <@${user.id}> (\`${user.tag}\`)`;
 
       const editTime = new Date().toLocaleString('en-US', { timeZone: 'UTC', dateStyle: 'full', timeStyle: 'short' });
 
