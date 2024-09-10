@@ -22,6 +22,7 @@ module.exports = {
       delete require.cache[require.resolve(langPath)];
       const lang = require(langPath);
 
+      console.log('Fetching audit logs...');
       const fetchedLogs = await member.guild.fetchAuditLogs({
         limit: 1,
         type: AuditLogEvent.MemberKick,
@@ -30,17 +31,28 @@ module.exports = {
         return null;
       });
 
-      const kickLog = fetchedLogs?.entries.first();
+      if (!fetchedLogs) {
+        console.log('No audit logs fetched.');
+        return;
+      }
+
+      const kickLog = fetchedLogs.entries.first();
       let kicked = false;
       let executor;
 
       if (kickLog) {
         const { executor: logExecutor, target, createdTimestamp } = kickLog;
 
-        if (target.id === member.id && (Date.now() - createdTimestamp) < 5000) {
+        console.log('Checking if the user was kicked...');
+        if (target.id === member.id && (Date.now() - createdTimestamp) < 15000) {
           kicked = true;
           executor = logExecutor;
+          console.log(`User was kicked by: ${executor.tag}`);
         }
+      }
+
+      if (!kicked) {
+        console.log('User left on their own.');
       }
 
       const actionBy = kicked ? `${lang.kicked_by} <@${executor.id}>` : `${lang.member_left}`;
@@ -57,7 +69,7 @@ module.exports = {
         .setColor(logSettings.embedColor)
         .setTimestamp();
 
-      logChannel.send({ embeds: [embed] }).catch(error => {
+      await logChannel.send({ embeds: [embed] }).catch(error => {
         console.error('Error sending kick/leave log embed:', error);
       });
 
