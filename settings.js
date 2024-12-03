@@ -3,7 +3,7 @@ module.exports = {
   "loggers": {
     "deleteMessage": {
       "enabled": false,
-      "channelId": "",
+      "channelId": "1313510917119410268",
       "embedColor": "#0091ff",
       "displayName": {
         "en": "Delete Message",
@@ -12,7 +12,7 @@ module.exports = {
     },
     "editMessage": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313510917119410268",
       "embedColor": "#ff0000",
       "displayName": {
         "en": "Edit Message",
@@ -21,7 +21,7 @@ module.exports = {
     },
     "joinMember": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313510846466490468",
       "embedColor": "#00ff00",
       "displayName": {
         "en": "Join Member",
@@ -30,7 +30,7 @@ module.exports = {
     },
     "leaveMember": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313510846466490468",
       "embedColor": "#ff0000",
       "displayName": {
         "en": "Leave Member",
@@ -39,7 +39,7 @@ module.exports = {
     },
     "channelCreate": {
       "enabled": false,
-      "channelId": "",
+      "channelId": "1313512894993928222",
       "embedColor": "#ffd700",
       "displayName": {
         "en": "Channel Create",
@@ -48,7 +48,7 @@ module.exports = {
     },
     "channelDelete": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313512894993928222",
       "embedColor": "#ff4500",
       "displayName": {
         "en": "Channel Delete",
@@ -57,7 +57,7 @@ module.exports = {
     },
     "channelUpdate": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313512894993928222",
       "embedColor": "#ffa500",
       "displayName": {
         "en": "Channel Update",
@@ -66,7 +66,7 @@ module.exports = {
     },
     "roleCreate": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513047482040382",
       "embedColor": "#ffd700",
       "displayName": {
         "en": "Role Create",
@@ -75,7 +75,7 @@ module.exports = {
     },
     "roleDelete": {
       "enabled": false,
-      "channelId": "",
+      "channelId": "1313513047482040382",
       "embedColor": "#00ff91",
       "displayName": {
         "en": "Role Delete",
@@ -84,7 +84,7 @@ module.exports = {
     },
     "roleUpdate": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513047482040382",
       "embedColor": "#ffa500",
       "displayName": {
         "en": "Role Update",
@@ -93,7 +93,7 @@ module.exports = {
     },
     "joinVoice": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513169297084457",
       "embedColor": "#00bfff",
       "displayName": {
         "en": "Join Voice",
@@ -102,7 +102,7 @@ module.exports = {
     },
     "leftVoice": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513169297084457",
       "embedColor": "#00bfff",
       "displayName": {
         "en": "Left Voice",
@@ -111,7 +111,7 @@ module.exports = {
     },
     "statsVoice": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513169297084457",
       "embedColor": "#ff4500",
       "displayName": {
         "en": "Voice Stats",
@@ -120,7 +120,7 @@ module.exports = {
     },
     "roleAdd": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513047482040382",
       "embedColor": "#00ff00",
       "displayName": {
         "en": "Role Add",
@@ -129,7 +129,7 @@ module.exports = {
     },
     "roleRemove": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513047482040382",
       "embedColor": "#ff0000",
       "displayName": {
         "en": "Role Remove",
@@ -138,7 +138,7 @@ module.exports = {
     },
     "changeNickname": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513401066192926",
       "embedColor": "#ffa500",
       "displayName": {
         "en": "Change Nickname",
@@ -147,7 +147,7 @@ module.exports = {
     },
     "kickMember": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513484893421599",
       "embedColor": "#ff4500",
       "displayName": {
         "en": "Kick Member",
@@ -156,7 +156,7 @@ module.exports = {
     },
     "banMember": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513569391870086",
       "embedColor": "#ff0000",
       "displayName": {
         "en": "Ban Member",
@@ -165,7 +165,7 @@ module.exports = {
     },
     "unbanMember": {
       "enabled": true,
-      "channelId": "",
+      "channelId": "1313513690309464159",
       "embedColor": "#ff0000",
       "displayName": {
         "en": "Unban Member",
